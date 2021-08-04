@@ -253,7 +253,7 @@ resource "aws_launch_template" "bastion_launch_template" {
   }
   key_name = var.bastion_host_key_pair
 
-  user_data = base64encode(templatefile("${path.module}/user_data.sh", {
+  user_data = base64encode(templatefile("${path.module}/user_data.sh.tpl", {
     aws_region              = var.region
     bucket_name             = var.bucket_name
     extra_user_data_content = var.extra_user_data_content
