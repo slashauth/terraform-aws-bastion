@@ -269,12 +269,12 @@ resource "aws_launch_template" "bastion_launch_template" {
 
   tag_specifications {
     resource_type = "instance"
-    tags          = merge(tomap({"Name", var.bastion_launch_template_name}), merge(var.tags))
+    tags          = merge(tomap({"Name" = var.bastion_launch_template_name}), merge(var.tags))
   }
 
   tag_specifications {
     resource_type = "volume"
-    tags          = merge(tomap({"Name", var.bastion_launch_template_name}), merge(var.tags))
+    tags          = merge(tomap({"Name" = var.bastion_launch_template_name}), merge(var.tags))
   }
 
   lifecycle {
